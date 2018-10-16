@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<board type="Arduino Nano" name="app">
+	<info>
+		Application for the Xscape xmas tree puzzle
+	</info>
+	
+	<devices>
+		<device name="Button" type="Debounced Input">
+			<setting id="pin" value="4"/>
+			<setting id="debounce_time" value="50"/>
+		</device>
+		<device name="NeoPixels" type="Adafruit NeoPixel">
+			<setting id="pin" value="3"/>
+			<setting id="npixels" value="100"/>
+		</device>
+	</devices>
+
+	<modules>
+		<module>Oneshot Timer</module>
+	</modules>
+
+	<custom_code>
+		<file>custom-code.cpp</file>
+		<file>settings.h</file>
+	</custom_code>
+
+	<logging>
+		<log_module>APPLICATION</log_module>
+	</logging>
+
+	<adl protocol="simple"></adl>
+</board>
