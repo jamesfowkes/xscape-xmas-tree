@@ -1,6 +1,8 @@
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
 
+#include "adl-defs.h"
+#include "adl-nv.h"
 #include "device.h"
 #include "parameter.h"
 #include "adl.h"
@@ -13,7 +15,6 @@
 
 #include "settings.h"
 
-static const uint8_t NUMBER_OF_PIXELS = 6;
 static const uint8_t CODE_COLOURS[NUMBER_OF_DIGITS][3] = {
 	{FLASH_COLOUR_1},
 	{FLASH_COLOUR_2},
@@ -44,7 +45,7 @@ static void start_flash(uint8_t digit)
 	if (digit < NUMBER_OF_DIGITS)
 	{
 		pNeopixels->pixels().clear();
-		pNeopixels->set_pixels(0, NUMBER_OF_PIXELS, CODE_COLOURS[digit]);
+		pNeopixels->set_pixels(0, pNeopixels->npixels(), CODE_COLOURS[digit]);
 	}
 }
 
@@ -81,13 +82,21 @@ static bool code_complete(uint8_t current_digit, uint8_t total_digits)
 
 static void play_intro()
 {
-	uint8_t i;
-	for (i=0; i<NUMBER_OF_DIGITS; i++)
+	int8_t i;
+	uint8_t n = pNeopixels->npixels();
+
+	for (i=0; i<n; i++)
 	{
-		start_flash_with_delay(i, s_timer, 250);
-		while (!s_timer.check_and_reset()) {}
-		stop_flash(i);
-		delay(250);
+		pNeopixels->pixels().setPixelColor(i, 16,0,0);
+		pNeopixels->pixels().show();
+		delay(20);
+	}
+
+	for (i=n; i>=0; i--)
+	{
+		pNeopixels->pixels().setPixelColor(i, 0,0,0);
+		pNeopixels->pixels().show();
+		delay(20);
 	}
 }
 
@@ -97,6 +106,8 @@ void adl_custom_setup(DeviceBase * pdevices[], int ndevices, ParameterBase * ppa
 
 	pInput = (DebouncedInput*)pdevices[0];
 	pNeopixels = (AdafruitNeoPixelADL*)pdevices[1];
+
+	logln(LOG_APP, "Starting with %d pixels", pNeopixels->npixels());
 
 	play_intro();
 }

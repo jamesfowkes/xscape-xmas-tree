@@ -13,6 +13,7 @@
 		<device name="NeoPixels" type="Adafruit NeoPixel">
 			<setting id="pin" value="3"/>
 			<setting id="npixels" value="100"/>
+			<setting id="type" value="NEO_RGB + NEO_KHZ800"/>
 		</device>
 	</devices>
 

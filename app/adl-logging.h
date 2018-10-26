@@ -4,7 +4,7 @@
 typedef enum adl_log_modules
 {
 
-	LOG_APP,
+    LOG_APP,
 
 } ADL_LOG_MODULES;
 

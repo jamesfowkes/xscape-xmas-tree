@@ -519,6 +519,23 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "custom-code.cpp",
+			"settings":
+			{
+				"buffer_size": 3479,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "settings.h",
+			"settings":
+			{
+				"buffer_size": 419,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -550,6 +567,10 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/home/james/code/xscape-xmas-tree"
+	],
 	"file_history":
 	[
 		"/home/james/code/xscape-advent/app/adl-logging.cpp",
@@ -708,6 +729,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"100",
+			"delay",
 			"DAYS_IN_ADVENT",
 			"finish_leds",
 			"set_leds",
@@ -833,9 +856,7 @@
 			"process_command",
 			"directory",
 			"write_library",
-			"render_library",
-			"buffer_size",
-			"parse_file"
+			"render_library"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -857,8 +878,72 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "custom-code.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3479,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1767,
+								1767
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/Stino/Arduino.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "settings.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 419,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								80,
+								80
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
